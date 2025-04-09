@@ -2,6 +2,18 @@
   "users": [
     {
       "id": "1",
+      "user_name": "admin",
+      "first_name": "admin",
+      "last_name": "admin",
+      "phone_number": "093110129",
+      "address": "Vietnam",
+      "email": "Hello@gmail.com",
+      "password": "12345",
+      "gender": "male",
+      "admin": true
+    },
+    {
+      "id": "2",
       "user_name": "layongrass",
       "first_name": "Thuan",
       "last_name": "Ngo Chi",
@@ -13,38 +25,14 @@
       "admin": true
     },
     {
-      "id": "2",
-      "user_name": "ads1",
-      "first_name": "thuan",
+      "id": "3",
+      "user_name": "thuan",
+      "first_name": "th",
       "last_name": "ngo",
       "phone_number": "0122334544",
       "address": "vietnam",
-      "email": "hello22@gmail.com",
+      "email": "hello@gmail.com",
       "password": "thuan",
-      "gender": "Male",
-      "admin": false
-    },
-    {
-      "id": "3",
-      "user_name": "testuser12",
-      "first_name": "th",
-      "last_name": "ngo",
-      "phone_number": "0999999922",
-      "address": "vietnam",
-      "email": "hello3@gmail.com",
-      "password": "thuan",
-      "gender": "Male",
-      "admin": false
-    },
-    {
-      "id": "4",
-      "user_name": "thuan1",
-      "first_name": "th",
-      "last_name": "thuan",
-      "phone_number": "0999999001",
-      "address": "vietnam",
-      "email": "hello12@gmail.com",
-      "password": "thuan16",
       "gender": "Male",
       "admin": false
     }
@@ -56,7 +44,7 @@
       "image": "Products/ProMounts Large Universal Tabletop TV Brackets (VESA 800x400) AMSF6401-02.jpg",
       "title": "ProMounts Large Universal Tabletop TV Brackets (VESA 800x400) AMSF6401-02",
       "price": "50.99",
-      "description": "ProMounts Tabletop TV Stand brackets features:\\n\\n\\t- Fits 37-72 inch flat panels up to 110 lbs with VESA mounting patterns up to \r\\n    800x400mm\\n\\t- Supports all VESA patterns from 200x200 to 800x400 \\n\\t- Sleek, sturdy replacement for the stand included with your TV \r\\n  \\t- Flexible brackets allow for up to 25° swivel \r\\n  \\t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\\n  \\t- Adjustable Brackets fit a wide range of TVs\r\\n  \\t- Low Profile, Minimal Design\r\\n  \\t- Easy to install, all hardware included \r\\n  \\t- Manufacturers Limited Lifetime Warranty \r\\n\\n",
+      "description": "ProMounts Tabletop TV Stand brackets features:\n\n\t- Fits 37-72 inch flat panels up to 110 lbs with VESA mounting patterns up to \r\n    800x400mm\n\t- Supports all VESA patterns from 200x200 to 800x400 \n\t- Sleek, sturdy replacement for the stand included with your TV \r\n  \t- Flexible brackets allow for up to 25° swivel \r\n  \t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\n  \t- Adjustable Brackets fit a wide range of TVs\r\n  \t- Low Profile, Minimal Design\r\n  \t- Easy to install, all hardware included \r\n  \t- Manufacturers Limited Lifetime Warranty \r\n\n",
       "list_anh": [
         "Products/ProMounts Large Universal Tabletop TV Brackets (VESA 800x400) AMSF6401-02_0.jpg",
         "Products/ProMounts Large Universal Tabletop TV Brackets (VESA 800x400) AMSF6401-02_1.jpg",
@@ -69,7 +57,7 @@
       "image": "Products/ProMounts Large Tabletop TV Stand (VESA 400x400) PMSA4401.jpg",
       "title": "ProMounts Large Tabletop TV Stand (VESA 400x400) PMSA4401",
       "price": "64.99",
-      "description": "ProMounts Tabletop TV Stand Mount features:\\n\\n\\t- Fits 37-65 inch flat panels up to 88 lbs with VESA mounting patterns up to 400x400mm\\n\\t- Supports all VESA patterns from 200x200 to 400x400 \\n\\t- Sleek, sturdy replacement for the stand included with your TV \r\\n  \\t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\\n  \\t- 3 Height adjustment options\r\\n  \\t- Integrated cable management system \r\\n  \\t- Strong and stable tempered glass base \r\\n  \\t- Easy to install, all hardware included \r\\n  \\t- Manufacturers Limited Lifetime Warranty \r\\n\\n",
+      "description": "ProMounts Tabletop TV Stand Mount features:\n\n\t- Fits 37-65 inch flat panels up to 88 lbs with VESA mounting patterns up to 400x400mm\n\t- Supports all VESA patterns from 200x200 to 400x400 \n\t- Sleek, sturdy replacement for the stand included with your TV \r\n  \t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\n  \t- 3 Height adjustment options\r\n  \t- Integrated cable management system \r\n  \t- Strong and stable tempered glass base \r\n  \t- Easy to install, all hardware included \r\n  \t- Manufacturers Limited Lifetime Warranty \r\n\n",
       "list_anh": [
         "Products/ProMounts Large Tabletop TV Stand (VESA 400x400) PMSA4401_0.jpg",
         "Products/ProMounts Large Tabletop TV Stand (VESA 400x400) PMSA4401_1.jpg",
@@ -82,7 +70,7 @@
       "image": "Products/B-Tech Neomounts Full Motion Desk Mount (Single) FPMA-D550BLACK.jpg",
       "title": "B-Tech Neomounts Full Motion Desk Mount (Single) FPMA-D550BLACK",
       "price": "86.00",
-      "description": "B-Tech's Neomounts desk mounts can be easily clamped to the rear or side of \r\\n  a desk or fixed through a grommet hole and the cable management clips ensures \r\\n  a neat and tidy installation. It features:\\n\\n\\t- Fits monitors up to 32 inch with VESA 75x75 or 100x100mm mounting patterns \r\\n    and 18lbs (8kgs)\\n\\t- 3 swivel points, at the pole, arm pivot and interface\\n\\t- Tool-less tilt and full screen rotation\\n\\t- Durable powder coated finish\\n\\t- Manual height adjustment\\n\\t- Supplied with both a desk clamp and grommet\\n\\t- Integrated cable management\\n\\t- Simple installation with all mounting hardware included\\n\\t- Max load: 18lbs (8kgs)\\n\\t- Tilt: +/- 45°\\n\\t- Swivel at pole / arm / interface: 180° / 360° / 180°\\n\\t- Screen rotation: 360°\\n\\t- Depth adjustment: 1.5 inch - 18 inch\\n\\t- Height adjustment: 17.3 inch\\n\\t- Clamp adjustment suitable for desktop thickness: 0.4 inch - 3.5 inch\\n\\n",
+      "description": "B-Tech's Neomounts desk mounts can be easily clamped to the rear or side of \r\n  a desk or fixed through a grommet hole and the cable management clips ensures \r\n  a neat and tidy installation. It features:\n\n\t- Fits monitors up to 32 inch with VESA 75x75 or 100x100mm mounting patterns \r\n    and 18lbs (8kgs)\n\t- 3 swivel points, at the pole, arm pivot and interface\n\t- Tool-less tilt and full screen rotation\n\t- Durable powder coated finish\n\t- Manual height adjustment\n\t- Supplied with both a desk clamp and grommet\n\t- Integrated cable management\n\t- Simple installation with all mounting hardware included\n\t- Max load: 18lbs (8kgs)\n\t- Tilt: +/- 45°\n\t- Swivel at pole / arm / interface: 180° / 360° / 180°\n\t- Screen rotation: 360°\n\t- Depth adjustment: 1.5 inch - 18 inch\n\t- Height adjustment: 17.3 inch\n\t- Clamp adjustment suitable for desktop thickness: 0.4 inch - 3.5 inch\n\n",
       "list_anh": [
         "Products/B-Tech Neomounts Full Motion Desk Mount (Single) FPMA-D550BLACK_0.jpg",
         "Products/B-Tech Neomounts Full Motion Desk Mount (Single) FPMA-D550BLACK_1.jpg",
@@ -95,7 +83,7 @@
       "image": "Products/ProMounts Large Tabletop Swivel TV Stand (VESA 600x400) AMSA6401-02.jpg",
       "title": "ProMounts Large Tabletop Swivel TV Stand (VESA 600x400) AMSA6401-02",
       "price": "94.99",
-      "description": "ProMounts Tabletop TV Stand Mount features:\\n\\n\\t- Fits 37-72 inch flat panels up to 99 lbs with VESA mounting patterns up to 600x400mm\\n\\t- Supports all VESA patterns from 200x200 to 600x400 \\n\\t- Sleek, sturdy replacement for the stand included with your TV \r\\n  \\t- Flexible brackets allow for up to 25° swivel \r\\n  \\t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\\n  \\t- Integrated cable management system \r\\n  \\t- Strong and stable tempered glass base \r\\n  \\t- Easy to install, all hardware included \r\\n  \\t- Manufacturers Limited Lifetime Warranty \r\\n\\n",
+      "description": "ProMounts Tabletop TV Stand Mount features:\n\n\t- Fits 37-72 inch flat panels up to 99 lbs with VESA mounting patterns up to 600x400mm\n\t- Supports all VESA patterns from 200x200 to 600x400 \n\t- Sleek, sturdy replacement for the stand included with your TV \r\n  \t- Flexible brackets allow for up to 25° swivel \r\n  \t- Suited for both Flat and Curved LED, LCD and Plasma displays \r\n  \t- Integrated cable management system \r\n  \t- Strong and stable tempered glass base \r\n  \t- Easy to install, all hardware included \r\n  \t- Manufacturers Limited Lifetime Warranty \r\n\n",
       "list_anh": [
         "Products/ProMounts Large Tabletop Swivel TV Stand (VESA 600x400) AMSA6401-02_0.jpg",
         "Products/ProMounts Large Tabletop Swivel TV Stand (VESA 600x400) AMSA6401-02_1.jpg",
@@ -108,7 +96,7 @@
       "image": "Products/Audio Visual Furniture Fixed Wedge Monitor Mount (Black) FWM100.jpg",
       "title": "Audio Visual Furniture Fixed Wedge Monitor Mount (Black) FWM100",
       "price": "99.00",
-      "description": "AVFI's Monitor Mount features: \\n\\n\\t- Designed to mount a monitor onto any of AVFIs wedge surfaces\\n\\t- Two piece bracket for easy installation\\n\\t- Mounting hardware included\\n\\t- 50x50, 75x75 and 100x100mm standard mounting plate\\n\\n",
+      "description": "AVFI's Monitor Mount features: \n\n\t- Designed to mount a monitor onto any of AVFIs wedge surfaces\n\t- Two piece bracket for easy installation\n\t- Mounting hardware included\n\t- 50x50, 75x75 and 100x100mm standard mounting plate\n\n",
       "list_anh": [
         "Products/Audio Visual Furniture Fixed Wedge Monitor Mount (Black) FWM100_0.jpg",
         "Products/Audio Visual Furniture Fixed Wedge Monitor Mount (Black) FWM100_1.jpg",
@@ -121,7 +109,7 @@
       "image": "Products/B-Tech Neomounts Desk Monitor Arm (Single) DS60-425BL1.jpg",
       "title": "B-Tech Neomounts Desk Monitor Arm (Single) DS60-425BL1",
       "price": "108.00",
-      "description": "B-Tech Neomounts desk monitor arm features:\\n\\n\\t- Universal full motion desk mount for monitors up to 27 inch with a maximum \r\\n    weight capacity of 17.6lbs (8 kg).\\n\\t- Versatile tilt (120°), rotate (360°) and swivel (180°) technology \r\\n    allows for the optimal height and viewing angle.\\n\\t- Manual height and depth adjustment to create the perfect working position.\\n\\t- Only minimal depth is required when placed near a wall or separation panel \r\\n    due to the short T-Rex® upper arm.\\n\\t- Smart internal cable management system ensures orderly routing of the cables.\\n\\t- Easy-release VESA system for easy installation.\\n\\t- Includes both desk clamp and grommet.\\n\\t-  VESA pattern: 75x75, 100x100 mm\\n\\t- Min. screen size*: 17 inch\\n\\t- Max. screen size*: 27 inch\\n\\t-  Height adjustment: 10.8-21.9 inch (27.5-55.5 cm)\\n\\t- Width adjustment: 13.07 inch (33.2 cm)\\n\\t- Depth adjustment: 2.6-15.67 inch (6.6-39.8 cm)\\n\\t- Max. weight: 17.6lbs (8 kg)\\n*Please note: The inch sizes stated are just an indication, combined with the \r\\n  weight and VESA sizes. The maximum weight and VESA size are absolute restrictions \r\\n  for the products and should not be exceeded. \\n\\n",
+      "description": "B-Tech Neomounts desk monitor arm features:\n\n\t- Universal full motion desk mount for monitors up to 27 inch with a maximum \r\n    weight capacity of 17.6lbs (8 kg).\n\t- Versatile tilt (120°), rotate (360°) and swivel (180°) technology \r\n    allows for the optimal height and viewing angle.\n\t- Manual height and depth adjustment to create the perfect working position.\n\t- Only minimal depth is required when placed near a wall or separation panel \r\n    due to the short T-Rex® upper arm.\n\t- Smart internal cable management system ensures orderly routing of the cables.\n\t- Easy-release VESA system for easy installation.\n\t- Includes both desk clamp and grommet.\n\t-  VESA pattern: 75x75, 100x100 mm\n\t- Min. screen size*: 17 inch\n\t- Max. screen size*: 27 inch\n\t-  Height adjustment: 10.8-21.9 inch (27.5-55.5 cm)\n\t- Width adjustment: 13.07 inch (33.2 cm)\n\t- Depth adjustment: 2.6-15.67 inch (6.6-39.8 cm)\n\t- Max. weight: 17.6lbs (8 kg)\n*Please note: The inch sizes stated are just an indication, combined with the \r\n  weight and VESA sizes. The maximum weight and VESA size are absolute restrictions \r\n  for the products and should not be exceeded. \n\n",
       "list_anh": [
         "Products/B-Tech Neomounts Desk Monitor Arm (Single) DS60-425BL1_0.jpg",
         "Products/B-Tech Neomounts Desk Monitor Arm (Single) DS60-425BL1_1.jpg",
@@ -134,7 +122,7 @@
       "image": "Products/B-Tech Neomounts Laptop Desk Mount (Black) DS20-425BL1.jpg",
       "title": "B-Tech Neomounts Laptop Desk Mount (Black) DS20-425BL1",
       "price": "127.00",
-      "description": "B-Tech Neomounts laptop desk mount features:\\n\\n\\t- Universal full motion desk mount for laptops up to 17.3 inch with a maximum \r\\n    weight capacity of 11lbs (5 kg).\\n\\t- Versatile tilt (120°), rotate (360°) and swivel (180°) technology \r\\n    allows for the optimal height and viewing angle.\\n\\t- Manual height and depth adjustment to create the perfect working position.\\n\\t- Only minimal depth is required when placed near a wall or separation panel \r\\n    due to the short T-Rex® upper arm.\\n\\t- Smart internal cable management system ensures orderly routing of the cables.\\n\\t- Easy-release VESA system for easy installation.\\n\\t- Includes both desk clamp and grommet.\\n\\t-  VESA pattern: 75x75, 100x100 mm\\n\\t- Min. screen size*: 11.6 inch\\n\\t- Max. screen size*: 17.3 inch\\n\\t-  Height adjustment: 9.65-15.28 inch (24.5-38.8 cm)\\n\\t- Width adjustment: 16.26 inch (41.3 cm)\\n\\t- Depth adjustment: 6.38-19.45 inch (16.2-49.4 cm)\\n\\t- Max. weight: 11lbs (5 kg)\\n*Please note: The inch sizes stated are just an indication, combined with the \r\\n  weight and VESA sizes. The maximum weight and VESA size are absolute restrictions \r\\n  for the products and should not be exceeded. \\n\\n",
+      "description": "B-Tech Neomounts laptop desk mount features:\n\n\t- Universal full motion desk mount for laptops up to 17.3 inch with a maximum \r\n    weight capacity of 11lbs (5 kg).\n\t- Versatile tilt (120°), rotate (360°) and swivel (180°) technology \r\n    allows for the optimal height and viewing angle.\n\t- Manual height and depth adjustment to create the perfect working position.\n\t- Only minimal depth is required when placed near a wall or separation panel \r\n    due to the short T-Rex® upper arm.\n\t- Smart internal cable management system ensures orderly routing of the cables.\n\t- Easy-release VESA system for easy installation.\n\t- Includes both desk clamp and grommet.\n\t-  VESA pattern: 75x75, 100x100 mm\n\t- Min. screen size*: 11.6 inch\n\t- Max. screen size*: 17.3 inch\n\t-  Height adjustment: 9.65-15.28 inch (24.5-38.8 cm)\n\t- Width adjustment: 16.26 inch (41.3 cm)\n\t- Depth adjustment: 6.38-19.45 inch (16.2-49.4 cm)\n\t- Max. weight: 11lbs (5 kg)\n*Please note: The inch sizes stated are just an indication, combined with the \r\n  weight and VESA sizes. The maximum weight and VESA size are absolute restrictions \r\n  for the products and should not be exceeded. \n\n",
       "list_anh": [
         "Products/B-Tech Neomounts Laptop Desk Mount (Black) DS20-425BL1_0.jpg",
         "Products/B-Tech Neomounts Laptop Desk Mount (Black) DS20-425BL1_1.jpg",

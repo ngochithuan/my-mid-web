@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Rating } from "react-simple-star-rating";
+import { Toast } from "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Card = ({ product }) => {
 const [lastCartItemId, setLastCartItemId] = useState(0);
+const userId = parseInt(localStorage.getItem("userId"), 10) || 1;
 
 // Lấy toàn bộ danh sách cartItems để kiểm tra
 async function getCartItems() {
@@ -76,6 +78,7 @@ async function getCartItems() {
     const totalPrice = quantity * parseFloat(productPrice);
     const data = {
       id: newId.toString(),
+      user_id: userId.toString(),
       product_id: productId,
       image: "/" + productImage,
       title: productTitle,
@@ -84,6 +87,7 @@ async function getCartItems() {
       totalPrice: totalPrice,
     };
     await postData(data);
+    
     alert("Added products to the cart");
   };
 

@@ -13,6 +13,7 @@ const Cart_popup = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const userId = parseInt(localStorage.getItem("userId"), 10) || 1;
 
   const processImage = (image) => {
     return image.startsWith("/") ? image : `/${image}`;
@@ -22,38 +23,44 @@ const Cart_popup = () => {
     setIsOpen(!isOpen);
   };
 
-  // Fetch ban đầu và thiết lập Web Worker
   const fetchCartItems = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/cartItems");
+      const response = await fetch(`http://localhost:3000/cartItems?user_id=${userId}`);
       if (!response.ok) throw new Error("Failed to fetch cart items");
       const json = await response.json();
+      if (!Array.isArray(json)) {
+        throw new Error("Expected an array of cart items");
+      }
       setCartItems(json);
       setError(null);
     } catch (error) {
       console.error("Error fetching cart items:", error);
-      setError("Could not load cart items");
+      setError(error.message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
-    fetchCartItems(); // Fetch ban đầu
+    fetchCartItems();
 
-    // Khởi tạo Web Worker
     const worker = new Worker(new URL("./cartWorker.js", import.meta.url));
+    worker.postMessage({ userId });
     worker.onmessage = (e) => {
+      if (!e || !e.data) {
+        setError("Invalid message from worker");
+        return;
+      }
       if (e.data.error) {
         setError(e.data.error);
-      } else if (e.data.cartItems) {
-        setCartItems(e.data.cartItems); // Chỉ cập nhật khi có thay đổi
+      } else if (e.data.cartItems && Array.isArray(e.data.cartItems)) {
+        setCartItems(e.data.cartItems);
       }
     };
 
-    return () => worker.terminate(); // Dọn dẹp worker khi unmount
-  }, [fetchCartItems]);
+    return () => worker.terminate();
+  }, [fetchCartItems, userId]);
 
   const increaseQuantity = async (record) => {
     setLoading(true);
@@ -187,7 +194,7 @@ const Cart_popup = () => {
 
   return (
     <div className="cart-container">
-      <div  id="cart-popup" className="cart-popup col-lg-8 col-xl-8 col-md-6 col-sm-12" onClick={toggleCart}>
+      <div id="cart-popup" className="cart-popup col-lg-8 col-xl-8 col-md-6 col-sm-12" onClick={toggleCart}>
         <Badge count={cartItems.length}>
           <ShoppingCartOutlined className="cart-icon" />
         </Badge>
@@ -204,7 +211,7 @@ const Cart_popup = () => {
               <p>Loading...</p>
             ) : error ? (
               <p style={{ color: "red" }}>{error}</p>
-            ) : cartItems.length === 0 ? (
+            ) : !Array.isArray(cartItems) || cartItems.length === 0 ? (
               <p className="empty-cart">Your cart is empty</p>
             ) : (
               <Table

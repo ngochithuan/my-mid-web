@@ -7,6 +7,7 @@ import Carousel from "./products/Carousel";
 import "../index.css";
 
 const DetailBody = ({ product }) => {
+  const userId = parseInt(localStorage.getItem("userId"), 10) || 1;
   const [products, setProducts] = useState([]);
   const images = product.list_anh || [];
   const [quantity, setQuantity] = useState(1);
@@ -113,6 +114,7 @@ const DetailBody = ({ product }) => {
     const totalPrice = quantity * parseFloat(productPrice);
     const data = {
       id: newId.toString(),
+      user_id: userId,
       product_id: productId,
       image: "/" + productImage,
       title: productTitle,

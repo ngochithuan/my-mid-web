@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
 import logo from "./Logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,12 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const Login = ({ onLoginSuccess }) => {
 
-  const mockAccounts = [
-    { userName: "admin", password: "12345" },
-    { userName: "testuser", password: "test123" },
-  ];
 
-
+  const userId = parseInt(localStorage.getItem("userId"), 10) || 1;
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userName: "",
@@ -58,11 +54,11 @@ const Login = ({ onLoginSuccess }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let hasError = false;
     const fields = ["userName", "password"];
-
+  
     fields.forEach((field) => {
       handleValidation(field);
       const inputElement = document.getElementById(field);
@@ -70,37 +66,46 @@ const Login = ({ onLoginSuccess }) => {
         hasError = true;
       }
     });
-
+  
     if (hasError) {
       setToast({ type: "danger", message: "Please fix errors before submitting!" });
       return;
     }
-
-    // Kiểm tra tài khoản trong danh sách giả
-    const matchedAccount = mockAccounts.find(
-      (acc) =>
-        acc.userName === formData.userName &&
-        acc.password === formData.password
-    );
-
-    if (matchedAccount) {
-      setToast({ type: "success", message: "Login successful!" });
-
-      setTimeout(() => {
-
-
-        if (matchedAccount.userName === "admin") {
-          navigate("/dashboard", { state: { showWelcome: true } });
-        } else {
-          navigate("/", { state: { showWelcome: true } });
-          onLoginSuccess();
-        }
-      }, 1000);
-    } else {
-      setToast({ type: "danger", message: "Invalid username or password!" });
+  
+    try {
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_name: formData.userName,
+          password: formData.password,
+        }),
+      });
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        // Lưu user_id vào localStorage
+        localStorage.setItem("userId", result.id);
+        localStorage.setItem("isAdmin", result.admin); // Tùy chọn: lưu quyền admin
+  
+        setToast({ type: "success", message: "Login successful!" });
+        setTimeout(() => {
+          if (result.admin) {
+            navigate("/dashboard", { state: { showWelcome: true } });
+          } else {
+            navigate("/", { state: { showWelcome: true } });
+            onLoginSuccess();
+          }
+        }, 1000);
+      } else {
+        setToast({ type: "danger", message: result.message });
+      }
+    } catch (error) {
+      setToast({ type: "danger", message: "Error connecting to server!" });
     }
   };
-
+  
   return (
     <div className="container-fluid">
       <div className="row">

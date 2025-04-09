@@ -75,7 +75,6 @@ const Register = () => {
       if (!response.ok) throw new Error("Failed to add user");
       const result = await response.json();
       console.log("Success:", result);
-      // Cập nhật lastUserID dựa trên ID vừa thêm
       setlastUserID((prev) => prev + 1);
     } catch (error) {
       console.error("Error:", error);
