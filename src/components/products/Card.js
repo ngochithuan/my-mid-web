@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Rating } from "react-simple-star-rating";
 
 const Card = ({ product }) => {
-  const [lastCartItemId, setLastCartItemId] = useState(0);
+const [lastCartItemId, setLastCartItemId] = useState(0);
 
 // Lấy toàn bộ danh sách cartItems để kiểm tra
 async function getCartItems() {

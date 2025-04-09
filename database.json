@@ -1,5 +1,54 @@
 {
-  "user":[],
+  "users": [
+    {
+      "id": "1",
+      "user_name": "layongrass",
+      "first_name": "Thuan",
+      "last_name": "Ngo Chi",
+      "phone_number": "023170129",
+      "address": "Vietnam",
+      "email": "ngochithuan.dev@gmail.com",
+      "password": "12345",
+      "gender": "male",
+      "admin": true
+    },
+    {
+      "id": "2",
+      "user_name": "ads1",
+      "first_name": "thuan",
+      "last_name": "ngo",
+      "phone_number": "0122334544",
+      "address": "vietnam",
+      "email": "hello22@gmail.com",
+      "password": "thuan",
+      "gender": "Male",
+      "admin": false
+    },
+    {
+      "id": "3",
+      "user_name": "testuser12",
+      "first_name": "th",
+      "last_name": "ngo",
+      "phone_number": "0999999922",
+      "address": "vietnam",
+      "email": "hello3@gmail.com",
+      "password": "thuan",
+      "gender": "Male",
+      "admin": false
+    },
+    {
+      "id": "4",
+      "user_name": "thuan1",
+      "first_name": "th",
+      "last_name": "thuan",
+      "phone_number": "0999999001",
+      "address": "vietnam",
+      "email": "hello12@gmail.com",
+      "password": "thuan16",
+      "gender": "Male",
+      "admin": false
+    }
+  ],
   "cartItems": [],
   "products": [
     {

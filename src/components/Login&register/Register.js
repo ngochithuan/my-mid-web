@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 
 import ToastNotification from "./ToastNotification";
-
 
 const Register = () => {
   const navigate = useNavigate();
@@ -25,6 +24,104 @@ const Register = () => {
     gender: "",
   });
 
+  const [lastUserID, setlastUserID] = useState(0);
+
+  // Lấy toàn bộ danh sách users để kiểm tra
+  async function getUsers() {
+    try {
+      const response = await fetch("http://localhost:3000/users");
+      if (!response.ok) throw new Error("Failed to fetch users");
+      const users = await response.json();
+      return users;
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      return [];
+    }
+  }
+
+  // Lấy ID lớn nhất từ danh sách users
+  async function getlastUserID() {
+    try {
+      const response = await fetch("http://localhost:3000/users");
+      if (!response.ok) throw new Error("Failed to fetch users");
+      const users = await response.json();
+      if (users.length === 0) return 0; // Nếu danh sách rỗng, bắt đầu từ 0
+      // Tìm ID lớn nhất (chuyển id về số nếu server trả về chuỗi)
+      const maxId = Math.max(...users.map((item) => Number(item.id)));
+      return maxId;
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      return 0;
+    }
+  }
+
+  // Khởi tạo lastUserID khi component mount
+  useEffect(() => {
+    getlastUserID().then((id) => {
+      setlastUserID(id);
+    });
+  }, []);
+
+  // Gửi dữ liệu lên server
+  async function postData(data) {
+    try {
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Failed to add user");
+      const result = await response.json();
+      console.log("Success:", result);
+      // Cập nhật lastUserID dựa trên ID vừa thêm
+      setlastUserID((prev) => prev + 1);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  const register = async (userName, firstName, lastName, phoneNumber, address, email, password, gender) => {
+    const users = await getUsers();
+
+    const existPhone = users.some(
+      (user) => (user.phone_number) === (phoneNumber)
+    );
+
+    const existEmail = users.some(
+      (user) => (user.email) === (email)
+    );
+
+    if (existPhone) {
+      alert("This phone number has been used");
+      return;
+    }
+    if (existEmail) {
+      alert("This email has been used");
+      return;
+    }
+    const lastId = await getlastUserID();
+    const newId = lastId + 1;
+    const data = {
+      id: newId.toString(),
+      user_name: userName,
+      first_name: firstName,
+      last_name: lastName,
+      phone_number: phoneNumber,
+      address: address,
+      email: email,
+      password: password,
+      gender: gender,
+      admin: false
+    };
+    await postData(data);
+    
+    setToast({ type: "success", message: "Registration successful!" });
+    setTimeout(() => {
+      navigate("/Login");
+    }, 1250);
+  };
 
   const handleToastClose = () => {
     setToast(null);
@@ -121,12 +218,28 @@ const Register = () => {
     });
 
     if (hasError) {
-      setToast({ type: "danger", message: "Please fix errors before submitting!" });
+      setToast({
+        type: "danger",
+        message: "Please fix errors before submitting!",
+      });
       return;
     }
 
-    setToast({ type: "success", message: "Registration successful!" });
-    alert("Registration successful!");
+    
+    //add
+    const Username = document.getElementById("userName").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    // const gender = document.getElementById("gender").value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+
+    
+    register(Username, firstName, lastName, phoneNumber, address, email, password, gender);
+    
   };
 
   return (
